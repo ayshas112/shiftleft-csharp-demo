@@ -5,8 +5,9 @@ build_rules:
       - secret
       - insight
       - "*"
-    severity:
-      - SEVERITY_MEDIUM_IMPACT
-      - SEVERITY_HIGH_IMPACT
-      - SEVERITY_LOW_IMPACT
+    cvss_31_severity_ratings:
+      - critical
+      - high
+      - medium
+      - low
     threshold: 0
