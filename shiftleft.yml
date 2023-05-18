@@ -6,7 +6,8 @@ build_rules:
       - insight
       - "*"
     severity:
-      - SEVERITY_MEDIUM_IMPACT
-      - SEVERITY_HIGH_IMPACT
-      - SEVERITY_LOW_IMPACT
+      - critical
+      - high
+      - medium
+      - low
     threshold: 0
