@@ -22,7 +22,7 @@ jobs:
         Expand-Archive -Path sl.zip -DestinationPath .
 
     - name: Build web api
-      run: dotnet build .netcoreWebapi
+      run: dotnet build netcoreWebapi
     - name: Extract branch name
       shell: bash
       run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
