@@ -22,13 +22,13 @@ jobs:
         Expand-Archive -Path sl.zip -DestinationPath .
 
     - name: Build web api
-      run: dotnet build netcoreWebapi
+      run: dotnet build .netcoreWebapi
     - name: Extract branch name
       shell: bash
       run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
       id: extract_branch
     - name: Analyze with NextGen Static Analysis
-      run: .\sl analyze --strict --app shiftleft-csharp-demo --tag branch=${{ github.head_ref || steps.extract_branch.outputs.branch }} --csharp  --cpg netcoreWebapi/netcoreWebapi.csproj
+      run: .\sl analyze --strict --app shiftleft-csharp-demo --tag branch=${{ github.head_ref || steps.extract_branch.outputs.branch }} --csharp  --cpg .netcoreWebapi/netcoreWebapi.csproj
       env:
         SHIFTLEFT_ACCESS_TOKEN: ${{ secrets.SHIFTLEFT_ACCESS_TOKEN }}
         
